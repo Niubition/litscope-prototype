@@ -1,0 +1,11 @@
+{
+  "name": "litscope-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LitScope 知研学术文献智能检索网页原型",
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}
+
