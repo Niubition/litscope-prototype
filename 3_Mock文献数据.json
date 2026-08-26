@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "dataset_name": "LitScope Lite prototype mock literature dataset",
+    "version": "2.0",
+    "generated_for": "学术文献智能检索工具交互原型面试题",
+    "mock_notice": "以下论文标题、作者、期刊、编号、链接、摘要、检索结果与统计均为虚构示例，不对应真实个人、机构、论文或商业数据。公开数据库名称与 API Base URL 仅用于演示适配器配置，原型不会发起真实请求。",
+    "updated_at": "2026-08-25",
+    "record_count": 6
+  },
+  "research_question": {
+    "id": "RQ-MOCK-001",
+    "text": "城市河流中微塑料丰度与暴雨径流、土地利用之间存在怎样的关系？",
+    "scope": {
+      "year_from": 2020,
+      "year_to": 2026,
+      "languages": ["zh", "en"],
+      "document_types": ["research_article"],
+      "not_covered": ["机构订阅库", "非中英文资料", "2020 年前研究", "真实全文"]
+    },
+    "concept_groups": [
+      {"name": "研究对象", "terms": ["城市河流", "城市水道"]},
+      {"name": "响应", "terms": ["微塑料", "纤维颗粒", "颗粒丰度"]},
+      {"name": "驱动", "terms": ["暴雨径流", "降雨事件", "初始冲刷"]},
+      {"name": "解释因素", "terms": ["土地利用", "不透水面", "道路密度"]}
+    ]
+  },
+  "source_coverage": [
+    {"source": "OpenAlex Mock adapter", "status": "mock_completed", "candidates": 12},
+    {"source": "Crossref Mock adapter", "status": "mock_completed", "candidates": 9},
+    {"source": "PubMed Mock adapter", "status": "mock_completed", "candidates": 8},
+    {"source": "arXiv Mock adapter", "status": "mock_partial", "candidates": 7}
+  ],
+  "api_provider_settings_mock": {
+    "connection_test_mode": "mock_only_no_network_request",
+    "secret_storage": "browser_local_storage_only",
+    "providers": [
+      {"name": "OpenAlex", "enabled": true, "api_base_url_example": "https://api.openalex.org", "auth": "none", "interface": "REST API"},
+      {"name": "Crossref", "enabled": true, "api_base_url_example": "https://api.crossref.org", "auth": "none", "interface": "REST API"},
+      {"name": "PubMed", "enabled": true, "api_base_url_example": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils", "auth": "optional_api_key_query", "interface": "E-utilities"},
+      {"name": "arXiv", "enabled": true, "api_base_url_example": "https://export.arxiv.org/api", "auth": "none", "interface": "Atom API"},
+      {"name": "Semantic Scholar", "enabled": false, "api_base_url_example": "https://api.semanticscholar.org/graph/v1", "auth": "api_key_header", "interface": "Graph API"},
+      {"name": "Europe PMC", "enabled": false, "api_base_url_example": "https://www.ebi.ac.uk/europepmc/webservices/rest", "auth": "none", "interface": "REST API"}
+    ]
+  },
+  "papers": [
+    {
+      "id": "P-MOCK-001",
+      "title": "暴雨事件下城市河流微塑料的脉冲式输入及土地利用控制",
+      "authors": ["林晓川", "顾一帆", "罗苇"],
+      "venue": "城市水环境研究（Mock）",
+      "year": 2025,
+      "identifier": "MOCK:10.0000/LS.2025.001",
+      "link": "mock://paper/P-MOCK-001",
+      "document_status": "published_mock",
+      "abstract": "基于六个虚构城市子流域的四次暖季暴雨事件，比较事件前后微塑料丰度、粒径与形态变化，并分析不透水面比例和道路密度的解释作用。",
+      "match_score": 92,
+      "priority": "priority_read",
+      "match_evidence": [
+        "直接比较暴雨前后微塑料丰度",
+        "包含多种土地利用类型和不透水面指标",
+        "提供事件尺度流量与颗粒物数据"
+      ],
+      "differences_and_limits": ["仅覆盖单个城市", "仅含暖季 4 次暴雨，不能代表全年变化"],
+      "verification": {"status": "cross_checked_mock", "sources": ["OpenAlex Mock adapter", "Crossref Mock adapter"], "verified_fields": ["title", "authors", "year", "identifier"]}
+    },
+    {
+      "id": "P-MOCK-002",
+      "title": "混合土地利用流域中微塑料的源解析与降雨响应",
+      "authors": ["周宁", "赵屿"],
+      "venue": "流域过程学报（Mock）",
+      "year": 2024,
+      "identifier": "MOCK:10.0000/LS.2024.014",
+      "link": "mock://paper/P-MOCK-002",
+      "document_status": "published_mock",
+      "abstract": "比较虚构流域居住、工业和绿地源区，报告降雨强度与纤维状颗粒丰度之间的关系，并尝试区分源区相对贡献。",
+      "match_score": 86,
+      "priority": "priority_read",
+      "match_evidence": ["区分三类土地利用源区", "使用事件采样", "报告降雨强度与纤维颗粒丰度关系"],
+      "differences_and_limits": ["温带中型流域，不是高密度亚热带城市", "源解析的不确定性较高"],
+      "verification": {"status": "cross_checked_mock", "sources": ["OpenAlex Mock adapter", "Crossref Mock adapter"], "verified_fields": ["title", "authors", "identifier"]}
+    },
+    {
+      "id": "P-MOCK-003",
+      "title": "城市地表径流颗粒污染物的快速筛查方法",
+      "authors": ["何敏", "宋原", "易潇"],
+      "venue": "环境监测方法（Mock）",
+      "year": 2026,
+      "identifier": "MOCK-PREPRINT:2026-071",
+      "link": "mock://paper/P-MOCK-003",
+      "document_status": "preprint_mock",
+      "abstract": "提出面向地表径流样品的颗粒污染物快速识别流程；虚构摘要仅简要提及微塑料。",
+      "match_score": 71,
+      "priority": "verify_first",
+      "match_evidence": ["径流样品方法相关", "可能补充筛查流程"],
+      "differences_and_limits": ["并非以微塑料为主要对象", "编号落地页暂不可用"],
+      "verification": {"status": "unverified_mock", "sources": ["arXiv Mock adapter"], "verified_fields": ["title"], "warning": "单一 Mock 来源且落地页不可用"}
+    },
+    {
+      "id": "P-MOCK-004",
+      "title": "初始冲刷效应如何改变城市河流微塑料的粒径结构",
+      "authors": ["沈舟", "叶棠"],
+      "venue": "城市水文前沿（Mock）",
+      "year": 2026,
+      "identifier": "MOCK:10.0000/LS.2026.021",
+      "link": "mock://paper/P-MOCK-004",
+      "document_status": "published_mock",
+      "abstract": "连续监测三次虚构暴雨过程，发现首小时径流中细粒径微塑料占比升高，并分析道路密度的解释作用。",
+      "match_score": 91,
+      "priority": "digest_priority",
+      "novelty_vs_seen": "把粒径结构而非总丰度作为主要响应",
+      "verification": {"status": "cross_checked_mock", "sources": ["OpenAlex Mock adapter", "Crossref Mock adapter"], "verified_fields": ["title", "authors", "year", "identifier"]}
+    },
+    {
+      "id": "P-MOCK-005",
+      "title": "面向高浑浊径流样品的聚合物识别质量控制流程",
+      "authors": ["陈西", "韩璐"],
+      "venue": "分析流程通讯（Mock）",
+      "year": 2026,
+      "identifier": "MOCK:10.0000/LS.2026.025",
+      "link": "mock://paper/P-MOCK-005",
+      "document_status": "published_mock",
+      "abstract": "提出针对有机质干扰的虚构预处理与空白校正流程，用于降低事件采样中纤维颗粒误判。",
+      "match_score": 83,
+      "priority": "digest_method",
+      "novelty_vs_seen": "补充事件采样质量控制，但不分析土地利用差异",
+      "verification": {"status": "verified_mock", "sources": ["PubMed Mock adapter"], "verified_fields": ["title", "authors", "year", "identifier"]}
+    },
+    {
+      "id": "P-MOCK-006",
+      "title": "高密度城区排水口的颗粒污染物事件变化",
+      "authors": ["匿名 Mock 作者"],
+      "venue": "arXiv Mock adapter",
+      "year": 2026,
+      "identifier": "MOCK-PREPRINT:2026-076",
+      "link": "mock://paper/P-MOCK-006",
+      "document_status": "preprint_mock",
+      "abstract": "虚构摘要显示研究可能包含微塑料颗粒和事件尺度采样，但无法核对全文与编号。",
+      "match_score": 76,
+      "priority": "digest_verify_first",
+      "novelty_vs_seen": "排水口情境可能具有增量价值，但证据不足",
+      "verification": {"status": "unverified_mock", "sources": ["arXiv Mock adapter"], "verified_fields": [], "warning": "单一来源，编号落地页暂不可用"}
+    }
+  ],
+  "digest_mock": {
+    "date": "2026-08-25",
+    "topic": "城市河流微塑料与暴雨径流",
+    "new_candidates": 7,
+    "filtered_out": 4,
+    "recommended": 3,
+    "pending_verification": 1,
+    "paper_ids": ["P-MOCK-004", "P-MOCK-005", "P-MOCK-006"],
+    "delivery_note": "仅用于静态原型演示，不创建真实定时任务或消息推送。"
+  }
+}
+
